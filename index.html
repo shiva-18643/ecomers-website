@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title> Cricket online store</title>
+  <style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #e8f0fc, #ffffff);
+  color: #222;
+  line-height: 1.6;
+}
+
+header {
+  background-color: #24292f;
+  color: white;
+  padding: 20px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+nav a {
+  color: white;
+  margin-left: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #ffc107;
+}
+
+nav a.cart {
+  font-size: 22px;
+}
+
+.hero {
+  background: url('https://images.unsplash.com/photo-1607083206469-b949b0ae1c49?auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+  color: white;
+  text-align: center;
+  padding: 120px 20px;
+  backdrop-filter: brightness(0.6);
+  position: relative;
+}
+
+.hero h1 {
+  font-size: 52px;
+  font-weight: 800;
+  text-shadow: 2px 2px 8px #000;
+}
+
+.hero p {
+  font-size: 22px;
+  margin: 15px 0 25px;
+}
+
+.btn {
+  background-color: #ffc107;
+  color: #000;
+  padding: 12px 28px;
+  font-size: 16px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 30px;
+  transition: 0.3s ease;
+}
+
+.btn:hover {
+  background-color:red;
+}
+
+.products {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.products h2 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 40px;
+  color: #0d6efd;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+  padding: 0 20px;
+}
+
+.product-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  transition: 0.3s ease;
+  backdrop-filter: blur(10px);
+  border: 1px solid #ddd;
+  
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+}
+
+.product-card img {
+  width: 100%;
+  border-radius: 10px;
+  height: 230px;
+  object-fit: cover;
+  
+}
+
+.product-card h3 {
+  margin: 12px 0 6px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.product-card p {
+  font-size: 18px;
+  color: #198754;
+  margin-bottom: 12px;
+}
+
+.product-card button {
+  background-color: #0d6efd;
+  color: white;
+  padding: 10px;
+  border: none;
+  width: 100%;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.product-card button:hover {
+  background-color: #0b5ed7;
+        padding: 10px 20px;
+      background-color:violet;
+      color: white;
+      border: none;
+      border-radius: 20px;
+      transition: background-color 0.3s ease;
+}
+
+footer {
+  text-align: center;
+  padding: 25px;
+  background-color: #212529;
+  color: #ccc;
+  margin-top: 60px;
+  font-size: 15px;
+}
+
+@media(max-width: 600px) {
+  .hero h1 {
+    font-size: 36px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .btn {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+
+  .product-card h3 {
+    font-size: 18px;
+  }
+
+  .product-card p {
+    font-size: 16px;
+  }
+}
+.search-box {
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+  flex-wrap: nowrap;
+  background: white;
+  border-radius: 25px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.search-box input {
+  border: none;
+  outline: none;
+  padding: 10px 15px;
+  font-size: 14px;
+  flex: 1;
+}
+
+.search-box button {
+  background: #ffc107;
+  border: none;
+  padding: 10px 16px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s ease;
+}
+
+.search-box button:hover {
+  background: #e0a800;
+}
+
+    
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">Cricket Online Store</div>
+    <br>
+    <nav>
+      <a href="http://127.0.0.1:3000/homelink2.html">Home</a>
+      <a href="http://127.0.0.1:3000/productlink2.html">Products</a>
+      <a href="#">About</a>
+      <a href="http://127.0.0.1:3000/contact.html">Contact</a>
+      <a href="#" class="cart">🛒</a>
+      <form class="search-box">
+  <input type="text" placeholder="Search products..." />
+  <button type="submit">🔍</button>
+</form>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>BCCI  OFFICCIAL STORE</h1>
+    <p>Up to 50% off on best-selling products in India</p>
+    <a href="https://www.flipkart.com/" class="btn">Shop Now</a>
+  </section>
+
+  <section class="products">
+    <h2>Featured Products</h2>
+    <div class="product-grid">
+
+      <div class="product-card">
+        <img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTrhUbMdB0TazLXf5BWFMjMEwS_lsPh1TfBW-ULedZX0ONT_SEW6GP39q8vLy1kfCSbF58Uw6Mzpv15uhYqhNLo8v013K2n7zw94RiBCzai51I4hM9BL_Ka_TY" width="200" height="10">
+        <h3>Cricket bat</h3>
+        <p>₹1,299</p>
+  <button>Add to cart</button>
+      </div>
+
+      <div class="product-card">
+        <img src="https://cdn.pixabay.com/photo/2020/08/07/10/37/ball-5470308_1280.png">
+        <h3>Lather ball</h3>
+        <p>₹999</p>
+        <button>Add to Cart</button>
+      </div>
+
+      <div class="product-card">
+        <img src="https://media.istockphoto.com/id/1265149211/photo/cricket-wickets-hit-by-ball-isolated-on-white-background.jpg?s=2048x2048&w=is&k=20&c=ShQK-3nOUm8CSTlj5p5pbQ-oJu_-lvH4yzK9NnkpQ2g="Leather Wallet">
+        <h3>wickets</h3>
+        <p>₹599</p>
+        <button>Add to Cart</button>
+      </div>
+
+      <div class="product-card">
+        <img src="https://media.istockphoto.com/id/1188515292/vector/cricket-shin-guard-icon.jpg?s=612x612&w=0&k=20&c=hMD4FFV0ek5UQnHd9wozvqH53-VWi9J57QyefhR02WU="Laptop Backpack>
+        <h3>PADS</h3>
+        <p>₹1,149</p>
+        <button>Add to Cart</button>
+      </div>
+      
+<div class="product-card">
+  <img src="https://media.istockphoto.com/id/538676650/photo/cricket-helmet.jpg?s=612x612&w=0&k=20&c=P20FIJ967drufqMiXGuWGlMnsUkzmn4i6roYU9ylpXg=" alt="Cricket Helmet">
+  <h3>Cricket Helmet</h3>
+  <p>₹899</p>
+  <button>Add to Cart</button>
+</div>
+
+<div class="product-card">
+  <img src="https://media.istockphoto.com/id/491945774/photo/close-up-of-cricket-batting-gloves.jpg?s=612x612&w=0&k=20&c=9ViKISu5YxBYeheP-2lLDAM3tp8roYW0fqdbeC1AU6s=" alt="SG Batting Gloves">
+  <h3>SG Batting Gloves</h3>
+  <p>₹749</p>
+  <button>Add to Cart</button>
+</div>
+
+<div class="product-card">
+  <img src="https://media.istockphoto.com/id/1249496770/photo/running-shoes.jpg?s=612x612&w=0&k=20&c=b4MahNlk4LH6H1ksJApfnlQ5ZPM3KGhI5i_yqhGD9c4=" alt="Puma Cricket Shoes">
+  <h3>Puma Cricket Shoes</h3>
+  <p>₹2,499</p>
+  <button>Add to Cart</button>
+</div>
+
+<div class="product-card">
+  <img src="https://media.istockphoto.com/id/1386879117/vector/sports-jersey-t-shirt-design-concept-vector-template-cricket-jersey-concept-with-front-and.jpg?s=612x612&w=0&k=20&c=fkwFETceHK6bth_lK5MW40rIswLdAvEbAVRmhZlRu90=" alt="rcb Jersey">
+  <h3>RCB Official Jersey</h3>
+  <p>₹1,599</p>
+  <button>Add to Cart</button>
+</div>
+
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 BCCI Official. All rights reserved. Made in India 🇮🇳</p>
+  </footer>
+
+</body>
+</html>
